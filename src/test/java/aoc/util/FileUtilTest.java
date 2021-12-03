@@ -14,7 +14,7 @@ import org.junit.rules.ExpectedException;
  * testing a static Kotlin class via jUnit / Java
  *
  */
-public class FileReaderTest {
+public class FileUtilTest {
 	
 	public static final String NON_EXISTENT_FILE_NAME = "notThere.txt";
 	public static final String HELLO_WORLD_FILE_NAME = "helloWorld.txt";
@@ -27,7 +27,7 @@ public class FileReaderTest {
 		
 		exception.expect(IllegalArgumentException.class);
 		exception.expectMessage("Resource " + fileName + " was not found");
-		FileReader.readClassPathFileToString(fileName);
+		FileUtil.readClassPathFileToString(fileName);
 	}
 	
 	@Test
@@ -36,14 +36,14 @@ public class FileReaderTest {
 		
 		exception.expect(IllegalArgumentException.class);
 		exception.expectMessage("Resource " + fileName + " was not found");
-		FileReader.readClassPathFileToList(fileName);
+		FileUtil.readClassPathFileToList(fileName);
 	}
 	
 	@Test
 	public void test_reading_file_as_string() {
 		String fileName = HELLO_WORLD_FILE_NAME;
 		
-		String fileContents = FileReader.readClassPathFileToString(fileName);
+		String fileContents = FileUtil.readClassPathFileToString(fileName);
 		assertEquals("Hello\nFoo Bar", fileContents);
 	}
 	
@@ -51,7 +51,7 @@ public class FileReaderTest {
 	public void test_reading_file_as_list() {
 		String fileName = HELLO_WORLD_FILE_NAME;
 		
-		List<String> fileContents = FileReader.readClassPathFileToList(fileName);
+		List<String> fileContents = FileUtil.readClassPathFileToList(fileName);
 		
 		assertNotNull(fileContents);
 		assertEquals("Hello", fileContents.get(0));

@@ -1,4 +1,4 @@
-@file:JvmName("FileReader")
+@file:JvmName("FileUtil")
 
 package aoc.util
 
