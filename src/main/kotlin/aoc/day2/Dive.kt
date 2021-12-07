@@ -8,6 +8,10 @@ class Dive {
         @JvmStatic
         fun main(args: Array<String>) {
             val commandList = readClassPathFileToList("day2/input.txt")
+            // a 2nd look over this
+            // would probably want a Dive interface or abstract class (w/ parse and process command methods)
+            // then would run two different concrete subclasses (Day1Dive and Day2Dive)
+            // so that Position wouldn't be an input parameter and processCommands could return it instead
             val position = Day2Position()
             Dive().processCommands(commandList, position)
 
