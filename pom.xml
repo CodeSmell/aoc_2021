@@ -8,7 +8,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
-		<kotlin.version>1.5.32</kotlin.version>
+		<kotlin.version>1.5.10</kotlin.version>
 
 		<kotlin.compiler.incremental>true</kotlin.compiler.incremental>
 		<maven.compiler.source>11</maven.compiler.source>
@@ -28,6 +28,12 @@
 		<dependency>
 			<groupId>org.jetbrains.kotlin</groupId>
 			<artifactId>kotlin-stdlib</artifactId>
+			<version>${kotlin.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jetbrains.kotlin</groupId>
+			<artifactId>kotlin-annotations-jvm</artifactId>
 			<version>${kotlin.version}</version>
 		</dependency>
 
